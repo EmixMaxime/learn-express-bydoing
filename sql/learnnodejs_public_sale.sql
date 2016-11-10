@@ -1,0 +1,14 @@
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (2, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (3, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (4, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (5, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (6, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (7, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (8, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (9, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (10, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (11, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (12, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (13, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (14, 3, 1);
+INSERT INTO public.sale (id, film_screening_id, price_profile_id) VALUES (1, 3, 1);

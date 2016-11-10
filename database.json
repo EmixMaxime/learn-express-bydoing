@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "driver": "pg",
+    "user": "emix",
+    "password": "emix",
+    "host": "localhost",
+    "database": "test",
+    "schema": "public"
+  },
+
+  "test": {
+    "driver": "sqlite3",
+    "filename": ":memory:"
+  },
+
+  "prod": {
+    "driver": "mysql",
+    "user": "root",
+    "password": "root"
+  },
+
+  "mongo": {
+    "driver": "mongodb",
+    "database": "my_db",
+    "host": "localhost"
+  },
+
+  "other": "postgres://uname:pw@server.com/dbname"
+}

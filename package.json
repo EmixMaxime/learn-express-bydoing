@@ -1,0 +1,29 @@
+{
+  "name": "learnnodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon -x 'node --harmony' ./bin/www ",
+    "test": "mocha",
+    "testwatch": "db-migrate reset --env test && db-migrate up --env test && mocha -w test/*.js --harmony --watch *.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "Faker": "^0.7.2",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "db-migrate": "^0.10.0-beta.20",
+    "db-migrate-sqlite3": "^0.2.1",
+    "express": "^4.14.0",
+    "foundation-sites": "^6.2.4",
+    "mocha": "^3.1.2",
+    "nodemon": "^1.11.0",
+    "pg": "^6.1.0",
+    "pg-async": "^2.4.0",
+    "sql-template-strings": "^2.2.2",
+    "ssh2": "^0.5.3",
+    "twig": "^0.10.0"
+  }
+}
