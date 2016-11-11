@@ -1,4 +1,11 @@
 # Relationship ? Relations ? Associations ?
+
+## Navigation
+### Les différents types de relation
+- [OneToOne](https://github.com/EmixMaxime/learn-express-bydoing/blob/master/wiki/dutinfo/relationship/oneToOne.md) (la plus simple)
+- [OneToMany](https://github.com/EmixMaxime/learn-express-bydoing/blob/master/wiki/dutinfo/relationship/oneToMany.md)
+
+## Introduction 
 Vous verez sûrement souvent (voir même très souvent) ces mots. Mais que veulent-t-ils dire ? <br />
 *Exemples types :relationships between database tables, oneToOne manyToOne relationsships* <br />
 *Exemples de documentations qui parlent de relationships (les 2 frameworks PHP les plus populaire / utilisé dans le monde) : [symfony](http://symfony.com/doc/current/doctrine/associations.html), [laravel](https://laravel.com/docs/5.3/eloquent-relationships#many-to-many)* <br />
@@ -24,7 +31,3 @@ La table price_profile est appellée table pivot, table intermédiaire... <br />
 Je vous ai perdu? Table pivot? Relations manyToMany ?
 <br />
 Je vous invite maintenant à lire le document où je vous parle des différents types de relation.
-
-## Les différents types de relation
-- [OneToOne](https://github.com/EmixMaxime/learn-express-bydoing/blob/master/wiki/dutinfo/relationship/oneToOne.md) (la plus simple)
-- [OneToMany](https://github.com/EmixMaxime/learn-express-bydoing/blob/master/wiki/dutinfo/relationship/oneToMany.md)
