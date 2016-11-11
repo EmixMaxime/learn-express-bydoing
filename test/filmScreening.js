@@ -45,15 +45,32 @@ describe('http routes for film', () => {
 
     describe('Requests to the get film route', () => {
 
-        it('Returns good data', async () => {
-            let resultExpected = await FilmModel.getActualFilm()
+        describe('Returns good data', () => {
 
-            const res = await chai.request(app)
-                .get('/film')
+            it('It should return today film without queryString', async () => {
+                let resultExpected = await FilmModel.getCurrentlyFilmAffiche()
 
-            const responseData = JSON.stringify(res.body)
-            resultExpected = JSON.stringify(resultExpected)
-            expect(responseData).to.equal(resultExpected)
+                const res = await chai.request(app)
+                    .get('/film/affiche')
+
+                const responseData = JSON.stringify(res.body)
+                resultExpected = JSON.stringify(resultExpected)
+                expect(responseData).to.equal(resultExpected)
+            })
+
+            it('It should return future film to queryString date', async () => {
+                const toDate = new Date()
+                toDate.setDate(toDate.getDate() + 1)
+                const toDateFormat = toDate.toLocaleDateString() // YYYY-MM-DD
+
+                let resultExpected = await FilmModel.getAfficheFilmToDate(toDate)
+                const res = await chai.request(app)
+                    .get(`/film/affiche?to=${toDateFormat}`)
+
+                const responseData = JSON.stringify(res.body)
+                resultExpected = JSON.stringify(resultExpected)
+                expect(responseData).to.equal(resultExpected)
+            })
         })
     })
 })

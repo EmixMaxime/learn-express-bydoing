@@ -1,6 +1,11 @@
 const express = require('express')
+const expressValidator = require('express-validator')
+const bodyParser = require('body-parser')
 const app = express()
 
+const parseUrlEncoded = bodyParser.urlencoded({ extended: false })
+app.use(parseUrlEncoded)
+app.use(expressValidator())
 app.use(express.static('public'))
 // ALTER TABLE film ALTER COLUMN title SET NOT NULL;
 // ALTER TABLE film ALTER COLUMN date_expire SET DEFAULT NULL;
