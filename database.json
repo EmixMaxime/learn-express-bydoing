@@ -4,7 +4,7 @@
     "user": "emix",
     "password": "emix",
     "host": "localhost",
-    "database": "test",
+    "database": "learnnodejs",
     "schema": "public"
   },
 
@@ -14,9 +14,12 @@
   },
 
   "prod": {
-    "driver": "mysql",
-    "user": "root",
-    "password": "root"
+    "driver": "pg",
+    "user": "emix",
+    "password": "emix",
+    "host": "localhost",
+    "database": "learnnodejs",
+    "schema": "public"
   },
 
   "mongo": {
