@@ -26,4 +26,5 @@ Je vous ai perdu? Table pivot? Relations manyToMany ?
 Je vous invite maintenant à lire le document où je vous parle des différents types de relation.
 
 ## Les différents types de relation
-- [OneToOne](#) (la plus simple)
+- [OneToOne](https://github.com/EmixMaxime/learn-express-bydoing/blob/master/wiki/dutinfo/relationship/oneToOne.md) (la plus simple)
+- [OneToMany](https://github.com/EmixMaxime/learn-express-bydoing/blob/master/wiki/dutinfo/relationship/oneToMany.md)
