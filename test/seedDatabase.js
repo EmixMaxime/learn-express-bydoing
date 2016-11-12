@@ -12,7 +12,4 @@ const fakeFilm = {
 pg.query(SQL`
     INSERT INTO film(title, description, date_release)
      values(${fakeFilm.title}, ${fakeFilm.description}, ${fakeFilm.date_release})`)
-
-console.log(fakeFilm)
-
-
+console.log("ENVIRONEMENT MODE", process.env.NODE_ENV )

@@ -1,4 +1,5 @@
 {
+  "defaultEnv": "test",
   "dev": {
     "driver": "pg",
     "user": "emix",
@@ -9,8 +10,12 @@
   },
 
   "test": {
-    "driver": "sqlite3",
-    "filename": ":memory:"
+    "driver": "pg",
+    "user": "emix",
+    "password": "emix",
+    "host": "localhost",
+    "database": "learnnodejs_test",
+    "schema": "public"
   },
 
   "prod": {
@@ -20,13 +25,6 @@
     "host": "localhost",
     "database": "learnnodejs",
     "schema": "public"
-  },
+  }
 
-  "mongo": {
-    "driver": "mongodb",
-    "database": "my_db",
-    "host": "localhost"
-  },
-
-  "other": "postgres://uname:pw@server.com/dbname"
 }
