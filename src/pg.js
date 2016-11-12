@@ -1,9 +1,5 @@
 const pg = require('pg')
 
-process.env.DATABASE_USER = process.env.DATABASE_USER  || 'emix'
-process.env.DATABASE_PASSWORD = process.env.DATABASE_PASSWORD || 'emix'
-process.env.DATABASE = process.env.DATABASE || 'learnnodejs'
-
 const config = {
     user: process.env.DATABASE_USER, //env var: PGUSER
     database: process.env.DATABASE, //env var: PGDATABASE
@@ -18,7 +14,6 @@ const config = {
 //and set a limit of maximum 10 idle clients
 let pool
 try {
-	console.log('DATABASE CONFIGURATIONS', process.env.PORT)
 	pool = new pg.Pool(config)
 } catch (error) {
 	console.log('Erreur lors de la connexion à la bdd : ', error)
