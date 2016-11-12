@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=dev nodemon -x 'node --harmony' ./bin/www ",
     "test": "mocha",
-    "testwatch": "db-migrate reset --env test && db-migrate up --env test && mocha -w test/*.js --harmony --watch *.js"
+    "testwatch": "db-migrate reset --env test && db-migrate up --env test && mocha --require test/support/env -w test/*.js --harmony --watch *.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "chai-http": "^3.0.0",
     "db-migrate": "^0.10.0-beta.20",
     "db-migrate-sqlite3": "^0.2.1",
+    "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "express-validator": "^2.21.0",
     "foundation-sites": "^6.2.4",
@@ -25,6 +26,7 @@
     "pg": "^6.1.0",
     "pg-async": "^2.4.0",
     "sql-template-strings": "^2.2.2",
+    "sqlite": "^2.2.3",
     "ssh2": "^0.5.3",
     "twig": "^0.10.0"
   }

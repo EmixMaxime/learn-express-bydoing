@@ -401,7 +401,7 @@ diff@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-1.4.0.tgz#7f28d2eb9ee7b15a97efd89ce63dcfdaa3ccbabf"
 
-dotenv@^2.0.0:
+dotenv, dotenv@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-2.0.0.tgz#bd759c357aaa70365e01c96b7b0bec08a6e0d949"
 
@@ -1744,7 +1744,13 @@ sql-template-strings:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/sql-template-strings/-/sql-template-strings-2.2.2.tgz#3f11508a25addfce217a3042a9d300c3193b96ff"
 
-sqlite3@^3.1.4:
+sqlite:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/sqlite/-/sqlite-2.2.3.tgz#c1a3777d5bc80bb9cd6ecb39e9bc500c380772e2"
+  dependencies:
+    sqlite3 "^3.1.8"
+
+sqlite3@^3.1.4, sqlite3@^3.1.8:
   version "3.1.8"
   resolved "https://registry.yarnpkg.com/sqlite3/-/sqlite3-3.1.8.tgz#4cbcf965d8b901d1b1015cbc7fc415aae157dfaa"
   dependencies:
