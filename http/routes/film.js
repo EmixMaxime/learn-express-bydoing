@@ -9,7 +9,7 @@ router.get('/affiche', async (request, response) => {
 	if (request.query.to) {
 		/* Validation */
 		request.checkQuery('to', 'Invalid getparam').isDate()
-		const errors = request.validationErrors()
+		const errors = await request.validationErrors()
 		if (errors) return response.status(500).json(errors)
 
 		/* getFilm with date */
