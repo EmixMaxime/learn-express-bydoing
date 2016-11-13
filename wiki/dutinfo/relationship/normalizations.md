@@ -19,3 +19,6 @@ Si vous souhaitez aller plus loin je vous conseil ces ressources :
 - [implémentation sur postgres]http://stackoverflow.com/questions/9789736/how-to-implement-a-many-to-many-relationship-in-postgresql)
 - [explication de la norme en profondeur](http://dba.stackexchange.com/questions/63389/database-design-normalizing-a-many-to-many-to-many-relationship
 **A noter : cette norme date de plus de 4 ans :-)** <br />
+
+Encore une fois, si vous doutez de mes dires je vous conseille d'explorer le web :-) <br />
+Regardez la documentation de RubyOnRails [ici](http://guides.rubyonrails.org/active_record_basics.html) (allez à la section 2.2) ou encore l'ORM doctrine (utilisé très très massivement sur des projets PHP et intégré à Symfony) [ici](http://docs.doctrine-project.org/projects/doctrine1/en/latest/en/manual/defining-models.html#relationships). <br />
