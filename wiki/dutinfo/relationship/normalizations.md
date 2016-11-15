@@ -6,6 +6,7 @@ Mon entité a une clef étrangère vers l'entité `client` ? L'attribut se nomme
 **Si vous regardez mon schéma, vous devez vous en rendre compte.**
 
 # ManyToMany
+**Chef, arrêtez-vous de suite si vous n'avez pas lu le guide sur les relations manyToMany, vous risqueriez de perdre la boule et de prendre un aller simple pour la lune.**
 On reprend notre exemple avec nos catégories et nos articles : <br />
 ![relationship](./img/article-category.png) <br />
 Le nom de notre table pivot suit une norme.
