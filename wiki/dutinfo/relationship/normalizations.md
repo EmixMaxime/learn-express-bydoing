@@ -1,4 +1,4 @@
-# Parlons de 'normalisations' des relations
+# Parlons de conventions à propos des relations
 
 # Les attributs clés étrangères
 Une règle simple : le nom de l'entité référée en préfixe de **`_id`** <br />

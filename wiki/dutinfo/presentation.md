@@ -1,3 +1,7 @@
+# Navigation :
+- [Voir les nouvelles conventions](./normalizations.md)
+- [Relationships](./relationship)
+
 # D'où provient le projet ?
 Lorsque je souhaite apprendre une nouvelle technologie je créé un nouveau projet, portant sur le monde réel. Actuellement j'apprend nodeJS avec ExpressJS il me fallait un nouveau projet, ayant vu un cinéma... *(ehh oui, l'inspiration viens de loin!)*. <br />
 Je tiens à préciser que ça ne reflète peut-être pas parfaitement la réalité, j'ai peut-être oublié quelques attributs. Si vous avez des idées, n'hésitez pas.

@@ -2,11 +2,15 @@
 
 Cette partie du Wiki est destinée aux étudiants de première année en DUT Informatique à l'IUT de Calais.
 La présentation porte ici non pas sur le code, mais sur **la base de donnée**. <br />
+A travers ce wiki je vais vous présenter des outils plutôt cool, très très cool même! Descendez la page, je vous présente heroku, une alternative pour **avoir postgres sur windows**. Je vous explique clairement les associations entre tables ect, avec un exemple concrès :-) <br />
+Laissez-vous guider, j'ai résumé un maximum les choses compliquées afin qu'elles deviennent simples, j'ai utilisé un cobaye pour m'en assurer. <br />
+Bonne lecture chef!
 
 # Navigation :
+*(à lire dans l'ordre sinon... vous allez être encore plus perdu)*
 - [Présentation](./presentation.md)
-- [Voir les nouvelles conventions](https://github.com/EmixMaxime/learn-nodejs-bydoing/blob/master/wiki/dutinfo/normalizations.md)
-- [Relationships](https://github.com/EmixMaxime/learn-nodejs-bydoing/tree/master/wiki/dutinfo/relationship)
+- [Voir les nouvelles conventions](./normalizations.md)
+- [Relationships](./relationship)
 
 # Des outils pratique !
 ## [Vertabelo](https://www.vertabelo.com/)

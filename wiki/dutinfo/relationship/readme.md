@@ -1,9 +1,11 @@
-# Relationship ? Relations ? Associations ?
+# Relationships ? Relations ? Associations ?
 
-## Navigation
-### Les différents types de relation
-- [OneToOne](https://github.com/EmixMaxime/learn-express-bydoing/blob/master/wiki/dutinfo/relationship/oneToOne.md) (la plus simple)
-- [OneToMany](https://github.com/EmixMaxime/learn-express-bydoing/blob/master/wiki/dutinfo/relationship/oneToMany.md)
+# Navigation
+*(encore une fois, l'ordre n'est pas la pour faire belle)*
+## Les différents types de relation
+- [OneToOne](./oneToOne.md) (la plus simple)
+- [OneToMany](./oneToMany.md)
+- [ManyToMany](./manyToMany.md) *(ne lisez pas ça après avoir mangé une pizza ou votre américain kebab merci)*
 
 ## Introduction 
 Vous verez sûrement souvent (voir même très souvent) ces mots. Mais que veulent-ils dire ? <br />
