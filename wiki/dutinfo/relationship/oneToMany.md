@@ -17,7 +17,7 @@ Si vous avez bien suivi, un `profile` peut appartenir à plusieurs `price`. Exem
 - Les étudiants payent 5€
 - Les adultes payent 7€ <br />
 
-On dit que `price` **hasMany** `profile`. <br />
+On dit que `price` **hasMany** `profile`. Et que `profile` **hasOne** `price` <br />
 Retenez bien cette phrase, vous la retrouverez partout !
 
 ## Réalisation :
