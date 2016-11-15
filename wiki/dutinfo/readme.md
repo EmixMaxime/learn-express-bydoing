@@ -2,12 +2,9 @@
 
 Cette partie du Wiki est destinée aux étudiants de première année en DUT Informatique à l'IUT de Calais.
 La présentation porte ici non pas sur le code, mais sur **la base de donnée**. <br />
-Objectif : vous mettre à jour..
-
-# Status :
-En cours de rédaction...
 
 # Navigation :
+- [Présentation](./presentation.md)
 - [Voir les nouvelles conventions](https://github.com/EmixMaxime/learn-nodejs-bydoing/blob/master/wiki/dutinfo/normalizations.md)
 - [Relationships](https://github.com/EmixMaxime/learn-nodejs-bydoing/tree/master/wiki/dutinfo/relationship)
 
