@@ -16,7 +16,7 @@ En cours de rédaction...
 Vertabelo est un outil en ligne **gratuit** qui vous propose de schématiser vos bases de données (création d'entités avec leurs attributs).
 Ne soyez pas surpris, les schémas ne sont pas les mêmes que ceux étudiés en cours. Si vous doutez de la conformité de ceux-ci, il vous suffit d'une simple recherche google : **"database modelling normalization"** pour vous retirer ces doutes.
 <br />
-Il n'y a qu'en réalité la modélisation de la cardinalité qui change pour être plus visuel : d'un cout d'oeil on peut reconnaître si c'est une relation oneToOne ou OneToMany. *(allez voir le guide sur les relations !)*
+Il n'y a qu'en réalité la modélisation de la cardinalité qui change pour être plus visuel : d'un coup d'oeil on peut reconnaître si c'est une relation oneToOne ou OneToMany. *(allez voir le guide sur les relations !)*
 
 Quelques fonctionnalités cool :
 - Modéliser une base de données, puis récupérer le DDL (je vous conseil tout de même de vérifier le DDL il peut y avoir des surprises parfois...)
@@ -33,8 +33,8 @@ Heroku est un cloud qui permet d'héberger des instances d'applications. Je parl
 - Créez-vous un compte sur leur [site](https://heroku.com).
 - Installez leur CLI, suivez les [instructions](https://devcenter.heroku.com/articles/heroku-command-line).
 - Connectez-vous : `heroku login` dans un terminal.
-- Créez votre database : `heroku addons:create heroku-postgresql --app nomDeVotreApp
-- Connectez-vous à votre base : `heroku pg:psql --app nomDeVotreApp`
+- Créez votre database : `heroku addons:create heroku-postgresql --app nomDeVotreApp`
+- Connectez-vous à votre base : `heroku pg:psql --app nomDeVotreApp`<br />
 ## Exemple :
 Voici la connexion à ma base en vérifiant qu'elle est bien active. *(oui j'ai une autre base sur une autre application, mais c'est secret défense chef!)* <br />
 ![heroku](./img/heroku-database.png) <br />
