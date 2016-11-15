@@ -6,7 +6,7 @@ On va commencer en douceur avec un exemple typique. <br />
 Sur un blog, il y a des articles qui appartiennent souvent à tes tags / catégories. <br />
 - Un article peut avoir plusieurs catégories
 - Une catégorie peut être liée à plusieurs articles <br />
-Vous voyez le problème venir? Non? Je vous avez dit d'éviter les kebabs pour cette partie... <br />
+Vous voyez le problème venir? Non? Je vous avais dit d'éviter les kebabs pour cette partie... <br />
 
 Ici nous allons avoir besoin d'une table intermédiaire pour stocker 2 clefs étrangères : `article_id` et `category_id`.
 En relation nous avons : `article` hasMany `category` mais aussi `category` **hasMany** `article` ! <br />
@@ -28,7 +28,7 @@ Mais ce n'est pas fini !
 
 Ansi j'ai appellée ma table pivot `film_screening` en prenant la convention mais en supprimant le _room. C'est pour éviter de surcharger.
 <br />
-Cette table fait la liaison entre mes entités : `film screening room`. Et elle est elle même référencé par sale. <br />
+Cette table fait la liaison entre mes entités : `film screening room`. Et elle est elle-même référencée par `sale`. <br />
 J'espère ne pas vous avoir perdu, si c'est le cas ne partez pas sur la lune mais faite le moi savoir :-)
 
 ## En action :
