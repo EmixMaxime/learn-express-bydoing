@@ -29,13 +29,13 @@ Je dois mettre un attribut `price_id` dans `profile` car l'autre proposition ne 
 
 | price         | value         |
 | ------------- |:-------------:|
-| profile_id    | 1				|
-| price         | 7€	        |
+| profile_id    | 1		|
+| price         | 5€	        |
 
 | price         | value         |
 | ------------- |:-------------:|
-| profile_id    | 2				|
-| price         | 7€	        |
+| profile_id    | 2		|
+| price         | 5€	        |
 
 On voit bien apparaître ici une redondance de la donnée price... Et cela n'est absolument pas bon ! <br />
 **La clef primaire doit toujours être dans la table où la cardinalité est la plus forte.
@@ -91,8 +91,8 @@ WHERE FS.date = now()::DATE
 ;
 ```
 est le tour est joué ! <br />
-Vous devez être entrain de vous demander, d'où ça vient le `now()::TIME` et le `now()::DATE`. ??? <br />
-- La fonction NOW() retourne le timestamp avec la timezone. (plus d'info ? **La documentation : [function now](http://devdocs.io/postgresql~9.6/functions-datetime#now**) ) <br /> en bref ? c'est **la date et l'heure actuelle**
+Vous devez être en train de vous demander, d'où ça vient le `now()::TIME` et le `now()::DATE`. ??? <br />
+- La fonction NOW() retourne le timestamp avec la timezone. (plus d'info ? **La documentation** : [function now](http://devdocs.io/postgresql~9.6/functions-datetime#now**) ) <br /> en bref ? c'est **la date et l'heure actuelle**
 - ::DATE ::TIME ? C'est en réalité un raccourci pour réaliser un **CAST**. now() retournant un timestamp et le champ FS.date étant de type date il y aurait erreur, je suis alors obligé de **caster** le type timestamp vers date.
 
 ## Ressources à lire :
