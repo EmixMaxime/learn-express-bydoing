@@ -11,14 +11,14 @@ On reprend notre exemple avec nos catégories et nos articles : <br />
 ![relationship](./img/article-category.png) <br />
 Le nom de notre table pivot suit une norme.
 Cette table réunit l'entité `category` et `article`, son nom est créé en fusionnant ces 2 noms espacés par un underscore par ordre alphabétique. <br />
-Tous ces noms de tables ne sont pas normalisés et donc vivement déconseillés de nos jours :
-	- category_article
-	- article-avoir-category
+Tous ces noms de tables ne sont pas normalisés et donc vivement déconseillés de nos jours : <br />
+- category_article
+- article-avoir-category
 <br /> 
 ## Resources :
 Si vous souhaitez aller plus loin je vous conseil ces ressources :
-- [implémentation sur postgres]http://stackoverflow.com/questions/9789736/how-to-implement-a-many-to-many-relationship-in-postgresql)
-- [explication de la norme en profondeur](http://dba.stackexchange.com/questions/63389/database-design-normalizing-a-many-to-many-to-many-relationship
+- [implémentation sur postgres](http://stackoverflow.com/questions/9789736/how-to-implement-a-many-to-many-relationship-in-postgresql)
+- [explication de la norme en profondeur](http://dba.stackexchange.com/questions/63389/database-design-normalizing-a-many-to-many-to-many-relationship)
 **A noter : cette norme date de plus de 4 ans :-)** <br />
 
 Encore une fois, si vous doutez de mes dires je vous conseille d'explorer le web :-) <br />
