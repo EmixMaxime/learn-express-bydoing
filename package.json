@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=dev nodemon -x 'node --harmony' ./bin/www ",
+    "dev": "NODE_ENV=dev nodemon -x 'node --require ./src/env --harmony' ./bin/www ",
     "test": "mocha",
-    "testwatch": "db-migrate reset --env test && db-migrate up --env test && mocha --require test/support/env -w test/*.js --harmony --watch *.js"
+    "testwatch": "db-migrate reset --env test && db-migrate up --env test && node ./database/seed/seedDatabase.js && mocha --require test/support/env -w test/*.js --harmony --watch *.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "express-validator": "^2.21.0",
     "foundation-sites": "^6.2.4",
     "mocha": "^3.1.2",
+    "moment": "^2.16.0",
     "nodemon": "^1.11.0",
     "pg": "^6.1.0",
     "pg-async": "^2.4.0",
