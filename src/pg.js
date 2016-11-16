@@ -1,9 +1,9 @@
 const pg = require('pg')
 
 const config = {
-    user: process.env.DATABASE_USER, //env var: PGUSER
-    database: process.env.DATABASE, //env var: PGDATABASE
-    password: process.env.DATABASE_PASSWORD, //env var: PGPASSWORD
+    user: process.env.DATABASE_USER || 'emix', //env var: PGUSER
+    database: process.env.DATABASE || 'learnnodejs_test' , //env var: PGDATABASE
+    password: process.env.DATABASE_PASSWORD || 'emix', //env var: PGPASSWORD
     host: 'localhost', // Server hosting the postgres database
     port: 5432, //env var: PGPORT
     max: 10, // max number of clients in the pool
@@ -14,6 +14,7 @@ const config = {
 //and set a limit of maximum 10 idle clients
 let pool
 try {
+	// console.log('CONFIGURATION PG : ', config)
 	pool = new pg.Pool(config)
 } catch (error) {
 	console.log('Erreur lors de la connexion à la bdd : ', error)
