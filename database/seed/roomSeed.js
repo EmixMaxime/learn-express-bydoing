@@ -1,6 +1,4 @@
 const Faker = require('Faker')
-// const pg = require('../src/pg')
-const SQL = require('sql-template-strings')
 
 const random = (min, max) => {
 	let number = 0
