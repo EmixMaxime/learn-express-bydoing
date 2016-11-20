@@ -1,5 +1,6 @@
 # Cache
 [Documentation parlant du cache des modules.](https://nodejs.org/api/modules.html#modules_caching) <br />
+[Post stackoverflow qui parle des Singletons](http://stackoverflow.com/questions/13179109/singleton-pattern-in-nodejs-is-it-needed)
 Le design pattern Singleton est donc inutile avec nodejs. <br />
 Exemple :
 
