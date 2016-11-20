@@ -6,13 +6,14 @@ const app = express()
 const parseUrlEncoded = bodyParser.urlencoded({ extended: false })
 app.use(parseUrlEncoded)
 app.use(expressValidator())
-app.use(express.static('public'))
+// app.use(express.static('public'))
+
 // ALTER TABLE film ALTER COLUMN title SET NOT NULL;
 // ALTER TABLE film ALTER COLUMN date_expire SET DEFAULT NULL;
 
-const filmScreeningRouter = require('./http/routes/film_screening')
-const filmRouter = require('./http/routes/film')
-app.use('/film_screening', filmScreeningRouter)
+const filmScreeningRouter = require('./app/http/routes/film_screening')
+const filmRouter = require('./app/http/routes/filmRoutes')
+// app.use('/film_screening', filmScreeningRouter)
 app.use('/film', filmRouter)
 
 app.get('/', (request, response) => {

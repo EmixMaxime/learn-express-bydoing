@@ -1,24 +1,28 @@
 const pg = require('pg')
+const rootPath = process.cwd()
+const config = require(`${rootPath}/config.js`)()
 
-const config = {
-    user: process.env.DATABASE_USER || 'emix', //env var: PGUSER
-    database: process.env.DATABASE || 'learnnodejs_test' , //env var: PGDATABASE
-    password: process.env.DATABASE_PASSWORD || 'emix', //env var: PGPASSWORD
-    host: 'localhost', // Server hosting the postgres database
+const postgresConfig = {
+    user: config.postgres.user, //env var: PGUSER
+    database: config.postgres.database , //env var: PGDATABASE
+    password: config.postgres.password, //env var: PGPASSWORD
+    host: config.postgres.host, // Server hosting the postgres database
     port: 5432, //env var: PGPORT
     max: 10, // max number of clients in the pool
     idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
 }
+
 //this initializes a connection pool
 //it will keep idle connections open for a 30 seconds
 //and set a limit of maximum 10 idle clients
 let pool
 try {
 	// console.log('CONFIGURATION PG : ', config)
-	pool = new pg.Pool(config)
+	pool = new pg.Pool(postgresConfig)
 } catch (error) {
 	console.log('Erreur lors de la connexion à la bdd : ', error)
 }
+
 module.exports = pool
 
 /* Proxy for my raspberry */
