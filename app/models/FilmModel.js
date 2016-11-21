@@ -9,9 +9,6 @@ class FilmModel {
     * @param {Array} data
     */
 
-    index () {
-
-    }
 
     /**
     * Get film

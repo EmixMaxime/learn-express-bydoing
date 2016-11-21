@@ -1,28 +1,14 @@
 'use strict'
 const model = require('../../models/FilmModel')
+const Controller = require('./Controller')
 
-class FilmController {
+class FilmController extends Controller {
 
 	constructor () {
+		super()
 		this.buildResponse = this.buildResponse.bind(this)
 		this.index = this.index.bind(this)
 		this.get = this.get.bind(this)
-	}
-
-	/**
-	 * @param  {Object|null} - error object
-	 * @param  {Object} - response object
-	 * @param  {Array|null}
-	 * @return {Object}
-	 */
-	
-	buildResponse (err, res, data) {
-		res.status(err ? 503 : 200).json({
-			error: err ? true : null,
-			errorMessage: err ? err : null,
-			data: data
-		})
-		return res
 	}
 
 	index (req, res, next) {
