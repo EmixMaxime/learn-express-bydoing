@@ -3,9 +3,11 @@ const moment = require('moment')
 
 class FilmScreeningModel {
 
-    getAllForToday () {
-        const result = pg.query('SELECT * FROM film_screening')
-        return result.rows
+    getAllForToday (callback) {
+        pg.query(`SELECT * FROM film_screening WHERE date = '${moment().format('YYYY-MM-DD')}'::DATE`, (err, result) => {
+            if (err) return callback('Problem with database', null)
+            return callback(null, result.rows)
+        })
     }
 
     getFilmScreeningForThisWeek () {
@@ -13,7 +15,7 @@ class FilmScreeningModel {
     	return this.getFilmScreeningToDate(nextSunday)
     }
 
-    getFilmScreeningToDate (date) {
+    getFilmScreeningToDate (date, callback) {
     	// TODO: tester si date est de type momentjs ?
     	const dateFormat = date.format('YYYY-MM-DD')
     	const sql = `
@@ -27,8 +29,10 @@ class FilmScreeningModel {
 			    AND S.hour > now()::TIME;
     	`
         /* Pourquoi avoir mit dateFormat en string ? Car il ne peut pas convertir des int en date... */
-    	const result = pg.query(sql)
-    	return result.rows
+    	const result = pg.query(sql, (err, result) => {
+            if (err) return callback('Problem with database', null)
+            return callback(null, result.rows)
+        })
     }
 }
 

@@ -11,9 +11,9 @@ app.use(expressValidator())
 // ALTER TABLE film ALTER COLUMN title SET NOT NULL;
 // ALTER TABLE film ALTER COLUMN date_expire SET DEFAULT NULL;
 
-const filmScreeningRouter = require('./app/http/routes/film_screening')
+const filmScreeningRouter = require('./app/http/routes/filmScreeningRoutes')
 const filmRouter = require('./app/http/routes/filmRoutes')
-// app.use('/film_screening', filmScreeningRouter)
+app.use('/film-screening', filmScreeningRouter)
 app.use('/film', filmRouter)
 
 app.get('/', (request, response) => {
