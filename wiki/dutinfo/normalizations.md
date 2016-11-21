@@ -1,3 +1,6 @@
+# Navigation :
+- [Relationships](./relationship)
+
 # Parlons de normes / conventions
 Le monde informatique évolue de plus en plus vite, les applications deviennent de plus en plus compliquées. <br />
 Il faut alors des normes pour aider les développeurs. Lorsque vous chercherez de l'aide sur Internet vous les trouverez toujours avec ces normes, sauf si les sujets datent d'une dizaine d'annéee. <br />
