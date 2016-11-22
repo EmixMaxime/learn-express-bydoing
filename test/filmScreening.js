@@ -1,76 +1,66 @@
-const expect = require('chai').expect
 const chai = require('chai')
+const expect = require('chai').expect
 const chaiHttp = require('chai-http')
-const app = require('./../app.js')
+const app = require('../app.js')
+const moment = require('moment')
+const FSModel = require('../app/models/FilmScreeningModel.js')
 
-const pg = require('./../src/pg.js')
-let model = require('./../src/model/FilmScreening.js')
-const FilmScreeningModel = new model()
-let model2 = require('./../src/model/FilmModel.js')
-const FilmModel = new model2()
+chai.use(chaiHttp)
 
-chai.use(chaiHttp);
+describe('http routes for film-screening',  () => {
 
-describe('http routes for film_screening',  () => {
+    describe('Requests to the get film-screening route', () => {
 
-    describe('Requests to the get film_screening route', () => {
-
-        it('Returns a 200 status code', async () => {
-            const response = await chai.request(app)
-                .get('/film_screening')
-            expect(response).to.have.status(200)
+        it('Returns a 200 status code', (done) => {
+            chai.request(app)
+                .get('/film-screening')
+                .end((err, res) => {
+                    expect(res).to.have.status(200)
+                    done()
+                })
         })
 
-        it('Returns a JSON format', async () => {
-            const res = await chai.request(app)
-                .get('/film_screening')
-            expect(res).to.be.json
+        it('Returns a JSON format', (done) => {
+            chai.request(app)
+                .get('/film-screening')
+                .end((err, res) => {
+                    expect(res).to.be.json
+                    done()
+                })
         })
 
-        it('Returns good data', async () => {
-            let resultExpected = await FilmScreeningModel.getAllForToday() // Get result from database
+        it('It should returns todays film_screening', (done) => {
+            FSModel.getAllForToday((err, data) => { // Get result from database
+                if (err) throw err
+                chai.request(app)
+                    .get('/film-screening')
+                    .end((err, res) => {
+                        const responseData = JSON.stringify(res.body.data)
+                        const resultExpected = JSON.stringify(data)
 
-            const res = await chai.request(app)
-                .get('/film_screening')
-            const responseData = JSON.stringify(res.body)
-            resultExpected = JSON.stringify(resultExpected)
-
-            expect(responseData).to.equal(resultExpected)
-        })
-
-    })
-})
-
-describe('http routes for film', () => {
-
-    describe('Requests to the get film route', () => {
-
-        describe('Returns good data', () => {
-
-            it('It should return today film without queryString', async () => {
-                let resultExpected = await FilmModel.getCurrentlyFilmAffiche()
-
-                const res = await chai.request(app)
-                    .get('/film/affiche')
-
-                const responseData = JSON.stringify(res.body)
-                resultExpected = JSON.stringify(resultExpected)
-                expect(responseData).to.equal(resultExpected)
+                        expect(responseData).to.equal(resultExpected)
+                        done()
+                    })
             })
 
-            it('It should return future film to queryString date', async () => {
-                const toDate = new Date()
-                toDate.setDate(toDate.getDate() + 1)
-                const toDateFormat = toDate.toLocaleDateString() // YYYY-MM-DD
+        })
 
-                let resultExpected = await FilmModel.getAfficheFilmToDate(toDate)
-                const res = await chai.request(app)
+        it('It should returns future film_screening to queryString date', (done) => {
+            const toDate = moment().add(2, 'days')
+            const toDateFormat = toDate.format('YYYY-MM-DD')
+
+            FSModel.getFilmScreeningToDate(toDate, (err, data) => {
+                chai.request(app)
                     .get(`/film/affiche?to=${toDateFormat}`)
-
-                const responseData = JSON.stringify(res.body)
-                resultExpected = JSON.stringify(resultExpected)
-                expect(responseData).to.equal(resultExpected)
+                    .end((err, res) => {
+                        const responseData = JSON.stringify(res.body.data)
+                        const resultExpected = JSON.stringify(data)
+                        expect(responseData).to.equal(resultExpected)
+                        done()
+                    })
             })
+
         })
+
     })
 })
