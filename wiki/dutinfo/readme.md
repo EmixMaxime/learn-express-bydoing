@@ -43,5 +43,5 @@ Voici la connexion à ma base en vérifiant qu'elle est bien active. *(oui j'ai 
 ![heroku](./img/heroku-database.png) <br />
 Bien-sûr cette plateforme vous permet de faire beaucoup d'autres choses *(applications php, nodejs, ruby... :o)*.
 
-## DataGrip : un IDE SQL
-Description à venir...
+# Cmder : un terminal pour windows
+Sur windows le terminal est juste horrible. Je vous conseil [Cmder](http://cmder.net/) qui est bien plus élégant. (très simple à installer).
