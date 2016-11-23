@@ -1,23 +1,40 @@
+process.env.NODE_ENV = 'test'
+
 const Faker = require('Faker')
-const pg = require('../../src/pg')
+const pg = require('../../app/libs/pg')
 const SQL = require('sql-template-strings')
 const moment = require('moment')
 const fs = require('fs')
 const path = require('path');
 
-// flags.defineString('format', 'query', 'Query or CSV')
 var argv = require('minimist')(process.argv.slice(2));
 const type = argv.type || 'query'
 
 const filmSeed = require('./filmSeed')
 const film = new filmSeed()
+
 const roomSeed = require('./roomSeed')
 const room = new roomSeed()
+
+const screeningSeed = require('./screeningSeed')
+const screening = new screeningSeed()
+
+let filmScreening = require('./filmScreeningSeed')
+filmScreening = new filmScreening()
 
 const seedings = new Map()
 seedings.set(film, 5)
 seedings.set(room, 5)
+seedings.set(screening, 5)
+seedings.set(filmScreening, 2)
 
+/**
+ * 
+ * 
+ * @param {any} data
+ * @param {any} fields
+ * @returns
+ */
 function parseValues (data, fields) {
 	let values = ''
 
@@ -33,25 +50,47 @@ function parseValues (data, fields) {
 	return values
 }
 
+let seededData = {
+}
+
 seedings.forEach((numberOfSeed, instanceOfSeeding) => {
+	const tableName = instanceOfSeeding.table
 
-	console.log('Insert into ', instanceOfSeeding.table)
-	const datas = instanceOfSeeding.building(numberOfSeed)
-	let writtable = fs.createWriteStream(path.resolve(__dirname, `../csv/${instanceOfSeeding.table}.csv`))
+	console.log('Insert into ', tableName)
+	// Initialize data variable :
+	seededData[tableName] = []
+	const needData = []
 
+	if (instanceOfSeeding.needs && instanceOfSeeding.needs.length > 0) {
+		instanceOfSeeding.needs.forEach(need => {
+			Object.keys(seededData).forEach(typeOfData => {
+				if (typeOfData === need) {
+					needData.push(seededData[typeOfData])
+				}
+			})
+		})
+	}
+
+	const datas = instanceOfSeeding.building(numberOfSeed, needData) // Building data from class xxxSeed
+
+	let writtable = fs.createWriteStream(path.resolve(__dirname, `../csv/${tableName}.csv`))
 
 	datas.forEach(data => {
 		const fields = Object.keys(data)
 
+		seededData[tableName].push(data)
+
 		if (type === 'query') {
 			const query = `
-				INSERT INTO ${instanceOfSeeding.table} ( ${fields.join(',')} )
+				INSERT INTO ${tableName} ( ${fields.join(',')} )
 				values ( ${parseValues(data, fields)} )
 			`
-			return pg.query(query)
-		}
+			pg.query(query, (err, data) => {
+				if (err) throw err
+				console.log('Insert data')
+			})
 
-		if (type === 'csv') {
+		} else if (type === 'csv') {
 			writtable.write(parseValues(data, fields))
 			writtable.write("\n")
 		}
