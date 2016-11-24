@@ -50,7 +50,11 @@ function parseValues (data, fields) {
 	return values
 }
 
-let seededData = {
+let seededData = {}
+
+const poolEnd = () => {
+	console.log('shutdown gracefully postgres pool')
+	pg.end()
 }
 
 seedings.forEach((numberOfSeed, instanceOfSeeding) => {
@@ -74,7 +78,13 @@ seedings.forEach((numberOfSeed, instanceOfSeeding) => {
 	const datas = instanceOfSeeding.building(numberOfSeed, needData) // Building data from class xxxSeed
 
 	let writtable = fs.createWriteStream(path.resolve(__dirname, `../csv/${tableName}.csv`))
-
+/**
+ * Il faut que je sache cb de fois je vais itérer sur datas
+ * incrémenter ça dans le callback query
+ * SI on a fini, alors on pool.end() !!
+ * L'idée : http://stackoverflow.com/questions/18983138/callback-after-all-asynchronous-foreach-callbacks-are-completed
+ */
+	let queryProcessed = 0;
 	datas.forEach(data => {
 		const fields = Object.keys(data)
 
@@ -88,6 +98,10 @@ seedings.forEach((numberOfSeed, instanceOfSeeding) => {
 			pg.query(query, (err, data) => {
 				if (err) throw err
 				console.log('Insert data')
+				queryProcessed++;
+				if (queryProcessed === datas.length) {
+					poolEnd()
+				}
 			})
 
 		} else if (type === 'csv') {
