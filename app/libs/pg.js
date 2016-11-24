@@ -9,19 +9,17 @@ const postgresConfig = {
     host: config.postgres.host, // Server hosting the postgres database
     port: 5432, //env var: PGPORT
     max: 10, // max number of clients in the pool
-    idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
+    idleTimeoutMillis: 5000, // how long a client is allowed to remain idle before being closed
 }
 
 //this initializes a connection pool
 //it will keep idle connections open for a 30 seconds
 //and set a limit of maximum 10 idle clients
-let pool
-try {
-	// console.log('CONFIGURATION PG : ', config)
-	pool = new pg.Pool(postgresConfig)
-} catch (error) {
-	console.log('Erreur lors de la connexion à la bdd : ', error)
-}
+const pool = new pg.Pool(postgresConfig)
+pool.on('error', (error, client) => {
+    throw error
+})
+
 
 module.exports = pool
 
